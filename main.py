@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap, QFont, QIcon
-from admin import Admin
-from student import Student
-from teacher import Teacher
+# from admin import Admin
+from student import StdWindow
+# from teacher import Teacher
 
 parol_admin = 1111
 name_admin = "ALisher"
@@ -11,8 +11,8 @@ name_admin = "ALisher"
 parol_teacher = 2222
 name_teacher = "Temur"
 
-parol_student = 3333
-name_student = "Muxtorhon"
+parol_student = 33
+name_student = "aa"
 
 
 class MyWindow(QWidget):
@@ -42,7 +42,7 @@ class MyWindow(QWidget):
 
         self.eye_btn = QPushButton()
         self.eye_btn.setCheckable(True)
-        self.eye_btn.setIcon(QIcon("hide.png"))
+        self.eye_btn.setIcon(QIcon("images\\hide.png"))
         self.eye_btn.setFixedSize(30, 30)
         self.eye_btn.clicked.connect(self.toggle_password_visibility)
 
@@ -68,7 +68,7 @@ class MyWindow(QWidget):
         self.v_edit_lay.addStretch()
 
         self.left_lbl = QLabel()
-        self.image = QPixmap("img.jpg")
+        self.image = QPixmap("images\\img.jpg")
         self.left_lbl.setPixmap(self.image)
         self.left_lbl.setScaledContents(True)
         self.v_img_lay.addWidget(self.left_lbl)
@@ -79,18 +79,21 @@ class MyWindow(QWidget):
         self.setLayout(self.h_main_lay)
 
     def kirish(self):
-        name = self.log_edit.text()
-        parol = self.par_edit.text()
+        id = self.log_edit.text()
+        name = self.par_edit.text()
         try:
-            if name == name_admin and parol == parol_admin:
-                Admin()
-            elif name == name_student and parol == parol_student:
-                Student()
-            elif name == name_teacher and parol == parol_teacher:
-                Teacher()
+            if name == name_admin and id == parol_admin:
+                # Admin()
+                pass
+            elif name == name_student and int(id) == parol_student:
+                self.std = StdWindow()
+                self.std.show()
+            elif name == name_teacher and id == parol_teacher:
+                # Teacher()
+                pass
             else:
                 self.msg = QMessageBox()
-                self.msg.setText("Siz xato ma'lumot kiritdingiz.!")
+                self.msg.setText("Parol yoki login xato.!")
                 self.msg.move(1500,100)
                 self.msg.setIcon(QMessageBox.Information)
                 self.msg.exec_()
@@ -105,11 +108,11 @@ class MyWindow(QWidget):
     def toggle_password_visibility(self):
         if self.eye_btn.isChecked():
             self.par_edit.setEchoMode(QLineEdit.Normal)
-            self.eye_btn.setIcon(QIcon("view.png"))
+            self.eye_btn.setIcon(QIcon("images\\view.png"))
             self.eye_btn.setFixedSize(30,30)
         else:
             self.par_edit.setEchoMode(QLineEdit.Password)
-            self.eye_btn.setIcon(QIcon("hide.png"))
+            self.eye_btn.setIcon(QIcon("images\\hide.png"))
             self.eye_btn.setFixedSize(30,30)
 
 if __name__ == "__main__":
