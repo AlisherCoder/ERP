@@ -3,13 +3,13 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap, QFont, QIcon
 # from admin import Admin
 from student import StdWindow
-# from teacher import Teacher
+from teacher import Techwindow
 
 parol_admin = 1111
 name_admin = "ALisher"
 
-parol_teacher = 2222
-name_teacher = "Temur"
+parol_teacher = 22
+name_teacher = "tt"
 
 parol_student = 33
 name_student = "aa"
@@ -20,6 +20,9 @@ class MyWindow(QWidget):
         super().__init__()
         self.resize(1700,900)
         self.setStyleSheet("background:#fff")
+        
+        self.setWindowIcon(QIcon("ERP/images/nt_logo.png"))
+        
         self.h_main_lay = QHBoxLayout()
         self.v_img_lay = QVBoxLayout()
         self.v_edit_lay = QVBoxLayout()
@@ -42,7 +45,7 @@ class MyWindow(QWidget):
 
         self.eye_btn = QPushButton()
         self.eye_btn.setCheckable(True)
-        self.eye_btn.setIcon(QIcon("images\\hide.png"))
+        self.eye_btn.setIcon(QIcon("ERP\images\\hide.png"))
         self.eye_btn.setFixedSize(30, 30)
         self.eye_btn.clicked.connect(self.toggle_password_visibility)
 
@@ -68,7 +71,7 @@ class MyWindow(QWidget):
         self.v_edit_lay.addStretch()
 
         self.left_lbl = QLabel()
-        self.image = QPixmap("images\\img.jpg")
+        self.image = QPixmap("ERP\images\img.jpg")
         self.left_lbl.setPixmap(self.image)
         self.left_lbl.setScaledContents(True)
         self.v_img_lay.addWidget(self.left_lbl)
@@ -88,15 +91,18 @@ class MyWindow(QWidget):
             elif name == name_student and int(id) == parol_student:
                 self.std = StdWindow()
                 self.std.show()
-            elif name == name_teacher and id == parol_teacher:
-                # Teacher()
-                pass
+            elif name == name_teacher and int(id) == parol_teacher:
+                self.tech = Techwindow()
+                self.tech.show()
             else:
                 self.msg = QMessageBox()
                 self.msg.setText("Parol yoki login xato.!")
-                self.msg.move(1500,100)
+                self.msg.move(1600,90)
+                self.msg.setStyleSheet("background-color:rgb(188,142,91);color:white;font-size:16px;font-family:sans-serif")
+                self.msg.setWindowTitle("Xatolik!")
+                self.msg.setContentsMargins(0,0,0,0)
                 self.msg.setIcon(QMessageBox.Information)
-                self.msg.exec_()
+                self.msg.exec_() 
         except:
             self.msg = QMessageBox()
             self.msg.setText("Siz xato ma'lumot kiritdingiz.!")
@@ -108,15 +114,16 @@ class MyWindow(QWidget):
     def toggle_password_visibility(self):
         if self.eye_btn.isChecked():
             self.par_edit.setEchoMode(QLineEdit.Normal)
-            self.eye_btn.setIcon(QIcon("images\\view.png"))
+            self.eye_btn.setIcon(QIcon("ERP\images\\view.png"))
             self.eye_btn.setFixedSize(30,30)
         else:
             self.par_edit.setEchoMode(QLineEdit.Password)
-            self.eye_btn.setIcon(QIcon("images\\hide.png"))
+            self.eye_btn.setIcon(QIcon("ERP\images\\hide.png"))
             self.eye_btn.setFixedSize(30,30)
 
 if __name__ == "__main__":
     app = QApplication([])
     win = MyWindow()
+    win.setWindowTitle("Offline student panel")
     win.show()
     app.exec_()

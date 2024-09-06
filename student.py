@@ -18,7 +18,7 @@ class StdWindow(QWidget):
 
             self.h_home_lay = QHBoxLayout()
             self.home_btn = QPushButton("   Bosh Sahifa",clicked=self.home)
-            self.home_btn.setIcon(QIcon("images\home.jpg"))
+            self.home_btn.setIcon(QIcon("ERP\images\home.jpg"))
             self.home_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.home_btn.setFixedHeight(50)
             self.home_btn.setFixedWidth(250)
@@ -26,42 +26,42 @@ class StdWindow(QWidget):
             
             self.h_pay_lay = QHBoxLayout()
             self.pay_btn = QPushButton("    To'lovlarim")
-            self.pay_btn.setIcon(QIcon("images\pay.png"))
+            self.pay_btn.setIcon(QIcon("ERP\images\pay.png"))
             self.pay_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.pay_btn.setFixedHeight(50)
             self.h_pay_lay.addWidget(self.pay_btn)
 
             self.h_group_lay = QHBoxLayout()
             self.group_btn = QPushButton("    Guruhlarim")
-            self.group_btn.setIcon(QIcon("images\group.png"))
+            self.group_btn.setIcon(QIcon("ERP\images\group.png"))
             self.group_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.group_btn.setFixedHeight(50)
             self.h_group_lay.addWidget(self.group_btn)
 
             self.h_grade_lay = QHBoxLayout()
             self.grade_btn = QPushButton("    Ko'rsatgich")
-            self.grade_btn.setIcon(QIcon("images\grade.jpg"))
+            self.grade_btn.setIcon(QIcon("ERP\images\grade.jpg"))
             self.grade_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.grade_btn.setFixedHeight(50)
             self.h_grade_lay.addWidget(self.grade_btn)
 
             self.h_reyting_lay = QHBoxLayout()
             self.reyting_btn = QPushButton("    Reyting")
-            self.reyting_btn.setIcon(QIcon("images\\reyting.jpg"))
+            self.reyting_btn.setIcon(QIcon("ERP\images\\reyting.jpg"))
             self.reyting_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.reyting_btn.setFixedHeight(50)
             self.h_reyting_lay.addWidget(self.reyting_btn)
 
             self.h_market_lay = QHBoxLayout()
             self.market_btn = QPushButton("    Do'kon")
-            self.market_btn.setIcon(QIcon("images\market.jpg"))
+            self.market_btn.setIcon(QIcon("ERP\images\market.jpg"))
             self.market_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.market_btn.setFixedHeight(50)
             self.h_market_lay.addWidget(self.market_btn)
 
             self.h_setting_lay = QHBoxLayout()
             self.setting_btn = QPushButton("    Sozlamalar")
-            self.setting_btn.setIcon(QIcon("images\setting.png"))
+            self.setting_btn.setIcon(QIcon("ERP\images\setting.png"))
             self.setting_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.setting_btn.setFixedHeight(50)
             self.h_setting_lay.addWidget(self.setting_btn)
@@ -76,11 +76,11 @@ class StdWindow(QWidget):
             self.h_mainbar_lay.addWidget(self.qlist)
 
             self.logotip = QLabel()
-            self.image = QPixmap("images\logo.jpg")
+            self.image = QPixmap("ERP\images\logo.jpg")
             self.logotip.setPixmap(self.image)
 
             self.side_btn = QPushButton()
-            self.side_btn.setIcon(QIcon("images\sidebar.jpg"))
+            self.side_btn.setIcon(QIcon("ERP\images\sidebar.jpg"))
             self.side_btn.setFixedSize(40,40)
             self.side_btn.setStyleSheet("background:rgb(188,142,91)")
 
@@ -88,11 +88,11 @@ class StdWindow(QWidget):
             self.h_logotip_lay.addWidget(self.side_btn)
 
             self.push_btn = QPushButton()
-            self.push_btn.setIcon(QIcon("images\push.jpg"))
+            self.push_btn.setIcon(QIcon("ERP\images\push.jpg"))
             self.push_btn.setFixedSize(40,40)
 
             self.exit_btn = QPushButton(clicked=self.exit)
-            self.exit_btn.setIcon(QIcon("images\exit.jpg"))
+            self.exit_btn.setIcon(QIcon("ERP\images\exit.jpg"))
             self.exit_btn.setFixedSize(40,40)
 
             self.h_exit_lay.addWidget(self.push_btn)
