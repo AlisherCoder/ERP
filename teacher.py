@@ -8,7 +8,7 @@ class Techwindow(QWidget):
         self.resize(1700, 900)
         self.setStyleSheet("background:#fff")
         
-        self.setWindowIcon(QIcon("ERP/images/nt_logo.png"))
+        self.setWindowIcon(QIcon("images/nt_logo.png"))
 
         self.v_main_lay = QVBoxLayout()
 
@@ -21,7 +21,7 @@ class Techwindow(QWidget):
 
         self.h_home_lay = QHBoxLayout()
         self.home_btn = QPushButton("   Bosh Sahifa", clicked=self.home)
-        self.home_btn.setIcon(QIcon("ERP/images/home.jpg"))
+        self.home_btn.setIcon(QIcon("images/home.jpg"))
         self.home_btn.setStyleSheet("""
             QPushButton {
                 font-size: 20px;
@@ -44,7 +44,7 @@ class Techwindow(QWidget):
 
         self.h_group_lay = QHBoxLayout()
         self.group_btn = QPushButton("    Guruhlarim")
-        self.group_btn.setIcon(QIcon("ERP/images/group.png"))
+        self.group_btn.setIcon(QIcon("images/group.png"))
         self.group_btn.setStyleSheet("""
             QPushButton {
                 font-size: 20px;
@@ -66,7 +66,7 @@ class Techwindow(QWidget):
 
         self.h_reyting_lay = QHBoxLayout()
         self.reyting_btn = QPushButton("    Reyting")
-        self.reyting_btn.setIcon(QIcon("ERP/images/reyting.jpg"))
+        self.reyting_btn.setIcon(QIcon("images/reyting.jpg"))
         self.reyting_btn.setStyleSheet("""
             QPushButton {
                 font-size: 20px;
@@ -89,7 +89,7 @@ class Techwindow(QWidget):
 
         self.h_setting_lay = QHBoxLayout()
         self.setting_btn = QPushButton("    Sozlamalar")
-        self.setting_btn.setIcon(QIcon("ERP/images/setting.png"))
+        self.setting_btn.setIcon(QIcon("images/setting.png"))
         self.setting_btn.setStyleSheet("""
             QPushButton {
                 font-size: 20px;
@@ -120,7 +120,7 @@ class Techwindow(QWidget):
         self.qlist.setIconSize(QSize(1359, 1200))
         self.qlist.setStyleSheet("background: rgb(238, 242, 246);")
         
-        item = QListWidgetItem(QIcon("ERP/images/lis.png"),"")
+        item = QListWidgetItem(QIcon("images/lis.png"),"")
         font = QFont()
         font.setPointSize(18)
         item.setFont(font)
@@ -130,11 +130,11 @@ class Techwindow(QWidget):
         self.h_mainbar_lay.addWidget(self.qlist)
 
         self.logotip = QLabel()
-        self.image = QPixmap("ERP/images/logo.jpg")
+        self.image = QPixmap("images/logo.jpg")
         self.logotip.setPixmap(self.image)
 
         self.side_btn = QPushButton()
-        self.side_btn.setIcon(QIcon("ERP/images/men.png"))
+        self.side_btn.setIcon(QIcon("images/men.png"))
         self.side_btn.setFixedSize(40, 40)
         self.side_btn.setStyleSheet("""
             background: rgb(188, 142, 91);
@@ -146,7 +146,7 @@ class Techwindow(QWidget):
         self.h_logotip_lay.addWidget(self.side_btn)
 
         self.push_btn = QPushButton()
-        self.push_btn.setIcon(QIcon("ERP/images/push.jpg"))
+        self.push_btn.setIcon(QIcon("images/push.jpg"))
         self.push_btn.setFixedSize(40, 40)
         self.push_btn.setStyleSheet("""
             QPushButton {
@@ -165,7 +165,7 @@ class Techwindow(QWidget):
             }""")
 
         self.exit_btn = QPushButton(clicked=self.exit)
-        self.exit_btn.setIcon(QIcon("ERP/images/exit.jpg"))
+        self.exit_btn.setIcon(QIcon("images/exit.jpg"))
         self.exit_btn.setFixedSize(40, 40)
         self.exit_btn.setStyleSheet("""
             QPushButton {

@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap, QFont, QIcon
-# from admin import Admin
+from admin import Admin
 from student import StdWindow
 from teacher import Techwindow
 
-parol_admin = 1111
-name_admin = "ALisher"
+parol_admin = 11
+name_admin = "aa"
 
 parol_teacher = 22
 name_teacher = "tt"
@@ -21,7 +21,7 @@ class MyWindow(QWidget):
         self.resize(1700,900)
         self.setStyleSheet("background:#fff")
         
-        self.setWindowIcon(QIcon("ERP/images/nt_logo.png"))
+        self.setWindowIcon(QIcon("images/nt_logo.png"))
         
         self.h_main_lay = QHBoxLayout()
         self.v_img_lay = QVBoxLayout()
@@ -45,7 +45,7 @@ class MyWindow(QWidget):
 
         self.eye_btn = QPushButton()
         self.eye_btn.setCheckable(True)
-        self.eye_btn.setIcon(QIcon("ERP\images\\hide.png"))
+        self.eye_btn.setIcon(QIcon("images\\hide.png"))
         self.eye_btn.setFixedSize(30, 30)
         self.eye_btn.clicked.connect(self.toggle_password_visibility)
 
@@ -71,7 +71,7 @@ class MyWindow(QWidget):
         self.v_edit_lay.addStretch()
 
         self.left_lbl = QLabel()
-        self.image = QPixmap("ERP\images\img.jpg")
+        self.image = QPixmap("images\img.jpg")
         self.left_lbl.setPixmap(self.image)
         self.left_lbl.setScaledContents(True)
         self.v_img_lay.addWidget(self.left_lbl)
@@ -85,9 +85,9 @@ class MyWindow(QWidget):
         id = self.log_edit.text()
         name = self.par_edit.text()
         try:
-            if name == name_admin and id == parol_admin:
-                # Admin()
-                pass
+            if name == name_admin and int(id) == parol_admin:
+                self.admin = Admin()
+                self.admin.show()
             elif name == name_student and int(id) == parol_student:
                 self.std = StdWindow()
                 self.std.show()
@@ -114,11 +114,11 @@ class MyWindow(QWidget):
     def toggle_password_visibility(self):
         if self.eye_btn.isChecked():
             self.par_edit.setEchoMode(QLineEdit.Normal)
-            self.eye_btn.setIcon(QIcon("ERP\images\\view.png"))
+            self.eye_btn.setIcon(QIcon("images\\view.png"))
             self.eye_btn.setFixedSize(30,30)
         else:
             self.par_edit.setEchoMode(QLineEdit.Password)
-            self.eye_btn.setIcon(QIcon("ERP\images\\hide.png"))
+            self.eye_btn.setIcon(QIcon("images\\hide.png"))
             self.eye_btn.setFixedSize(30,30)
 
 if __name__ == "__main__":
