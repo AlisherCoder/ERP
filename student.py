@@ -63,8 +63,8 @@ class StdWindow(QWidget):
 
             self.h_market_lay = QHBoxLayout()
 
-            self.market_btn = QPushButton("    Do'kon")
-            self.market_btn.setIcon(QIcon("ERP\images\market.jpg"))
+            self.market_btn = QPushButton("    Do'kon",clicked=self.market)
+            self.market_btn.setIcon(QIcon("images\market.jpg"))
 
             self.market_btn.setStyleSheet("font-size:15px;font-family:Georgia")
             self.market_btn.setFixedHeight(50)
